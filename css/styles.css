@@ -163,6 +163,7 @@ h1 {
 }
 
 .nav-link {
+    position: relative;
     display: block;
     font-weight: 500;
     font-size: 16px;
@@ -173,11 +174,9 @@ h1 {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link.current {
-    position: relative;
-}
 
-.nav-link.current::after {
+
+.nav-link::after {
     content: "";
     width: 100%;
     height: 4px;
@@ -186,7 +185,16 @@ h1 {
     bottom: -1px;
     border-radius: 2px;
     background-color: #404BBF;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.current::after {
+    opacity: 1;
+}
+
 
 .nav-menu-item .logo a:hover {
     color: #404bbf;
@@ -389,10 +397,38 @@ h1 {
             gap: 24px;
             margin: 0 16px;
 }
-.members-socials-icon {
 
+.members-socials-icon {
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-8px, -8px);
+}
+
+.members-socials-icon .use-icon {
+    fill: #ffffff;
 
 }
+.social-item {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.social-link {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+    background-color: #404bbf;
+
+}
+
 
 /* ==========  /Our team section ========== */
 
@@ -401,7 +437,7 @@ h1 {
 /* ==========  Portfolio ========== */
 
 .portfolio-section {
-    padding: 120px 0; 
+    padding: 120px 0;
 }
 
 .portfolio-container {
@@ -409,6 +445,7 @@ h1 {
     margin: 0 auto;
     padding: 0;
 }
+
 .portfolio-cards {
     display: flex;
     flex-wrap: wrap;
@@ -417,15 +454,16 @@ h1 {
 }
 
 .portfolio-item {
-    width: 360px; 
-    background: #ffffff; 
+    display: flex;
+    width: 360px;
+    background: #ffffff;
     box-sizing: border-box;
-    
+    flex-direction: column-reverse;
 }
 
 .portfolio-item img {
     max-width: 360px;
-    height: auto; 
+    height: auto;
     border-bottom: 1px solid #E7E9FC;
     margin-left: -1px;
     border: none;
@@ -437,9 +475,48 @@ h1 {
 }
 
 .app-title {
+    position: relative;
+    overflow: hidden;
     padding: 32px 16px;
     border: 1px solid #E7E9FC;
-        border-top: none;
+    border-top: none;
+    cursor: pointer;
+}
+
+.overlayed-card {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    border: none;
+
+    transform: translateY(100%);
+    transition: transform 250ms ease-in-out;
+}
+
+.app-title:hover+.overlayed-card .overlay-text {
+    transform: translateY(0);
+}
+
+.app-title:hover+.portfolio-item,
+.app-title:focus+.portfolio-item,
+.app-title:hover,
+.app-title:focus {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+        0 1px 1px 0 rgba(46, 47, 66, 0.16),
+        0 1px 6px 0 rgba(46, 47, 66, 0.08);
+        background: #fff;
+    transition: box-shadow 250ms ease-in-out;
 }
 /* ========== / Portfolio ========== */
 
@@ -447,7 +524,7 @@ h1 {
 /* ========== Footer ========== */
 
 .footer-container {
-display: block;
+display: flex;
 max-width: 1158px;
 }
 .footer-section a {
@@ -489,5 +566,17 @@ max-width: 1158px;
     letter-spacing: 0.02em;
     max-width: 264px;
 }
+.list-socials {
+        display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+}
 
+.foter-socials {
+    margin-left: 120px;
+}
+.foter-socials h4 {
+        margin-bottom: 16px;
+            color: white;
+}
 /* ========== / Footer ========== */
