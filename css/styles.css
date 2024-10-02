@@ -567,6 +567,11 @@ h1 {
     transform: translateY(0);
 }
 
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
 
 /* ========== / Portfolio ========== */
 
