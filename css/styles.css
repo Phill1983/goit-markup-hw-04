@@ -606,8 +606,7 @@ max-width: 1158px;
     
 }
 
-.footer-section .logo-text,
-.footer-section p {
+.footer-section .logo-text {
     color: #f4f4fd;
 }
 .footer-text {
@@ -616,6 +615,7 @@ max-width: 1158px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     max-width: 264px;
+    color: #f4f4fd;
 }
 .list-socials {
     display: flex;
