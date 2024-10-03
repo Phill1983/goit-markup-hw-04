@@ -637,8 +637,7 @@ max-width: 1158px;
      background-color: #31d0aa;
 }
 .foter-socials .members-socials-icon {
-    width: 24px;
-    height: 24px;
+    
         transform: translate(-12px, -12px);
         fill: #f4f4fd;
 }
