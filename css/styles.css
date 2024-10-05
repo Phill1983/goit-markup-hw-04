@@ -439,7 +439,7 @@ h1 {
     letter-spacing: 0.02em;
     text-align: center;
     color: #434455;
-    padding: 8px;
+    margin: 8px;
 }
 .member-socials {
         display: flex;
