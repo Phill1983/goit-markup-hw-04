@@ -88,7 +88,7 @@ h1 {
     letter-spacing: 0.02em;
     color: #2e2f42;
     text-align: center;
-        margin: 8px 0;
+        margin-bottom: 8px;
 }
 
 .item-text {
@@ -430,7 +430,7 @@ h1 {
 }
 
 .member-title {
-    padding: 32px 0;
+    margin: 32px 0;
 }
 .member-role {
     font-weight: 400;
@@ -439,7 +439,7 @@ h1 {
     letter-spacing: 0.02em;
     text-align: center;
     color: #434455;
-    margin: 8px;
+    margin-bottom: 8px;
 }
 .member-socials {
         display: flex;
